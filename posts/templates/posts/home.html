@@ -3,6 +3,8 @@
 {% block content %}
 
 <h1>The homepage of nowhere!</h1>
+{% load static %}
+<img src="{% static 'posts/food.jpg' %}" alt="food" class="img-responsive" />
 <a class="btn btn-primary" href="{% url 'posts:create' %}">New Post</a>
 
 <br>

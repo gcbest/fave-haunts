@@ -101,6 +101,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Media
+MEDIA_URL = '/pics/'
+MEDIA_ROOT = BASE_DIR
+
 # Logging
 
 LOGGING = {
