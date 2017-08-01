@@ -1,0 +1,8 @@
+<h1>UPVOTES</h1>
+
+{% for like in likes.all %}
+	
+	{{ like.post.title }}
+	{{ like.post.url }}
+
+{% endfor%}

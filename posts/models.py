@@ -17,10 +17,10 @@ class Post(models.Model):
 	def pub_date_pretty(self):
 		return self.pub_date.strftime('%b %e %Y')
 
-# class Like(models.Model):
-#     user = models.ForeignKey(User)
-#     post = models.ForeignKey(Post)
-#     created = models.DateTimeField(auto_now_add=True)
+class Like(models.Model):
+    user = models.ForeignKey(User)
+    post = models.ForeignKey(Post)
+    created = models.DateTimeField(auto_now_add=True)
 
-#     def __str__(self):
-#     	return self.post.title
+    def __str__(self):
+    	return self.post.title
