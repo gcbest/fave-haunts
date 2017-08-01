@@ -2,14 +2,8 @@
 
 {% block content %}
 
-<h1>The homepage of nowhere!</h1>
-<a class="btn btn-primary" href="{% url 'posts:create' %}">New Post</a>
-
+<h1>All Posts in {{ topic }}</h1>
 <br>
-<br>
-
-<a class="btn btn-danger" href="{% url 'posts:food' %}">Food</a>
-<a class="btn btn-danger" href="{% url 'posts:entertainment' %}">Entertainment</a>
 
 {% for post in posts.all %}
 
@@ -29,8 +23,6 @@
 			<a href="{{ post.url }}">{{ post.title }}</a>
 			<br>
 			{{ post.pub_date_pretty }} by <a href="{% url 'posts:userposts' post.author.id %}">{{ post.author.username }}</a>
-			<br>
-			<a href="{% url 'posts:upvoted' post.author.id %}">UPVOTED</a>
 		</td>
 	</tr>
 </table>
