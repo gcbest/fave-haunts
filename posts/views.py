@@ -63,15 +63,15 @@ def userposts(request, fk):
 	posts = Post.objects.filter(author__id=fk).order_by('-votes_total')
 	author = User.objects.get(pk=fk)
 	print(request.user.id)
-	likes = Like.objects.filter(user__id=fk)
+	# likes = Like.objects.filter(user__id=fk)
 	# likes = Like.objects.all()
 	# likes = Like.objects.prefetch_related('post_set').all()
 	# for a in likes:
 	# 	a.is_liked = (request.user in a.likes.all())
-	likes_list = list(likes)
-	print(likes_list)
-	print(posts)
-	return render(request, 'posts/userposts.html', {'posts': posts, 'author': author, 'likes': likes_list})
+	# likes_list = list(likes)
+	# print(likes_list)
+	# print(posts)
+	return render(request, 'posts/userposts.html', {'posts': posts, 'author': author})
 	# return render(request, 'posts/userposts.html', {'likes': likes})
 
 def upvoted(request, fk):
