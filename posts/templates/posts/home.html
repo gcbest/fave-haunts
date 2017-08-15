@@ -2,9 +2,24 @@
 
 {% block content %}
 
-<h1>The homepage of nowhere!</h1>
-{% load static %}
-<img src="{% static 'posts/food.jpg' %}" alt="food" class="img-responsive" />
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-3">Fave Haunts</h1>
+    <p class="lead">Find the Most Liked Food &amp; Fun Locations in NYC!</p>
+  </div>
+</div>
+<div class="row">
+	{% load static %}
+	<div class="col-sm-6">
+		<img id="food" src="{% static 'posts/food.jpg' %}" alt="food" class="img-responsive" />	
+		<h4 class="topic">Food</h4>
+	</div>
+	<div class="col-sm-6">
+		<img id="fun" src="{% static 'posts/food.jpg' %}" alt="food" class="img-responsive" />	
+		<h4 class="topic">Fun</h4>
+	</div>
+</div>
+
 <a class="btn btn-primary" href="{% url 'posts:create' %}">New Post</a>
 
 <br>

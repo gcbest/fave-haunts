@@ -1,0 +1,21 @@
+h1 {
+	color: orange;
+}
+
+#food:hover {
+	opacity: 0.75
+}
+
+#fun:hover {
+	opacity: 0.75
+}
+
+.topic {
+	  z-index: 100;
+  position: absolute;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  left: 150px;
+  top: 350px;
+}
