@@ -5,6 +5,8 @@
 <h1>All Posts in {{ topic }}</h1>
 <br>
 
+<a class="btn btn-primary" href="{% url 'posts:create' %}">New Post</a>
+
 {% for post in posts.all %}
 
 <table>	

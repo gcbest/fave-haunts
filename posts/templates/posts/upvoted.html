@@ -1,8 +1,31 @@
-<h1>UPVOTES</h1>
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>UPVOTED</h1>
 
 {% for like in likes.all %}
-	
-	{{ like.post.title }}
-	{{ like.post.url }}
+
+<table>	
+	<tr>
+		<td style="padding-right: 20px">
+			<a href="#" onClick="document.getElementById('upvote{{ post.id }}').submit()">
+				<span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span> 
+			</a>
+			<br>
+			{{ like.post.votes_total }} <br>
+			<a href="#" onClick="document.getElementById('downvote{{ post.id }}').submit()">
+				<span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span> 
+			</a>
+		</td>
+		<td>
+			<a href="{{ post.url }}">{{ like.post.title }}</a>
+			<br>
+			{{ like.post.pub_date_pretty }} by <a href="{% url 'posts:userposts' like.post.author.id %}">{{ like.post.author.username }}</a>
+		</td>
+	</tr>
+</table>
 
 {% endfor%}
+
+{% endblock %}

@@ -19,7 +19,7 @@ def create(request):
 				post.url = 'http://' + request.POST['url']
 			post.pub_date = timezone.datetime.now()
 			post.author = request.user
-			post.topic = request.POST['topic']
+			post.topic = request.POST['topics']
 			post.save()
 			return redirect('home')
 		else:
@@ -63,16 +63,7 @@ def userposts(request, fk):
 	posts = Post.objects.filter(author__id=fk).order_by('-votes_total')
 	author = User.objects.get(pk=fk)
 	print(request.user.id)
-	# likes = Like.objects.filter(user__id=fk)
-	# likes = Like.objects.all()
-	# likes = Like.objects.prefetch_related('post_set').all()
-	# for a in likes:
-	# 	a.is_liked = (request.user in a.likes.all())
-	# likes_list = list(likes)
-	# print(likes_list)
-	# print(posts)
 	return render(request, 'posts/userposts.html', {'posts': posts, 'author': author})
-	# return render(request, 'posts/userposts.html', {'likes': likes})
 
 def upvoted(request, fk):
 	likes = Like.objects.filter(user__id=fk)
@@ -83,7 +74,7 @@ def food(request):
 	posts = Post.objects.filter(topic='food').order_by('-votes_total')
 	return render(request, 'posts/food.html', {'posts': posts, 'topic': 'Food'})
 
-def entertainment(request):
+def fun(request):
 	# filter posts by topic
-	posts = Post.objects.filter(topic='entertainment').order_by('-votes_total')
-	return render(request, 'posts/entertainment.html', {'posts': posts, 'topic': 'Entertainment'})
+	posts = Post.objects.filter(topic='fun').order_by('-votes_total')
+	return render(request, 'posts/fun.html', {'posts': posts, 'topic': 'Fun'})
