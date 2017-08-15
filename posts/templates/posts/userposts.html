@@ -4,6 +4,9 @@
 
 <h1>All Posts by {{ author.username }}</h1>
 <br>
+<a href="{% url 'posts:upvoted' author.id %}" class="btn btn-danger">Posts Upvoted By {{ author.username }}</a>
+<br>
+<br>
 
 {% for post in posts.all %}
 

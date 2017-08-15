@@ -6,7 +6,8 @@
 <br>
 
 <a class="btn btn-primary" href="{% url 'posts:create' %}">New Post</a>
-
+<br>
+<br>
 
 {% for post in posts.all %}
 
@@ -27,7 +28,6 @@
 			<br>
 			{{ post.pub_date_pretty }} by <a href="{% url 'posts:userposts' post.author.id %}">{{ post.author.username }}</a>
 			<br>
-			<a href="{% url 'posts:upvoted' post.author.id %}">UPVOTED</a>
 		</td>
 	</tr>
 </table>

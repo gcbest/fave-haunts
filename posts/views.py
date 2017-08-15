@@ -67,13 +67,16 @@ def userposts(request, fk):
 
 def upvoted(request, fk):
 	likes = Like.objects.filter(user__id=fk)
-	return render(request, 'posts/upvoted.html', {'likes': likes})
+	user = User.objects.get(pk=fk)
+	return render(request, 'posts/upvoted.html', {'likes': likes, 'user': user})
 
+@login_required
 def food(request):
 	# filter posts by topic
 	posts = Post.objects.filter(topic='food').order_by('-votes_total')
 	return render(request, 'posts/food.html', {'posts': posts, 'topic': 'Food'})
 
+@login_required
 def fun(request):
 	# filter posts by topic
 	posts = Post.objects.filter(topic='fun').order_by('-votes_total')
