@@ -1,2 +1,3 @@
 venv/
-posts/migrations
+fave-haunts/posts/migrations
+.DS_Store

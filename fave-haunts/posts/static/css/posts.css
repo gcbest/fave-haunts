@@ -16,23 +16,14 @@ h1 {
 	border-color: orange;
 }
 
-#logout {
+.nav-action{
 	font-size: 16px;
 }
+
 .nav-topic {
 	font-size: 24px;
 }
 
 .navbar-brand {
 	font-size: 24px;
-}
-
-.topic {
-	  z-index: 100;
-  position: absolute;
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
-  left: 150px;
-  top: 350px;
 }
