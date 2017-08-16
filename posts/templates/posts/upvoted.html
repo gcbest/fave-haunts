@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+<div class="row">
+	<div class="col-sm-8 col-sm-offset-4">
+		
 <h1>Posts Upvoted by {{ user }}</h1> 
 
 {% for like in likes.all %}
@@ -27,5 +29,8 @@
 </table>
 
 {% endfor%}
+	</div>
+</div>
+
 
 {% endblock %}

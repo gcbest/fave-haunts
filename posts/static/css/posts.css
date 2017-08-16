@@ -2,12 +2,29 @@ h1 {
 	color: orange;
 }
 
-#food:hover {
-	opacity: 0.75
+.image-holder {
+  background-size: cover;
+  background-position: center center;
+  height: 258px;
+  width: 100%;
 }
 
-#fun:hover {
-	opacity: 0.75
+.image-holder:hover {
+	opacity: 0.75;
+	border-style: solid;
+	border-width: 1px;
+	border-color: orange;
+}
+
+#logout {
+	font-size: 16px;
+}
+.nav-topic {
+	font-size: 24px;
+}
+
+.navbar-brand {
+	font-size: 24px;
 }
 
 .topic {

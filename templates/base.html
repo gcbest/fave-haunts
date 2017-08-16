@@ -38,7 +38,9 @@
       			{% csrf_token %}
       			<input type="hidden">
       		</form>
-      		<li><a href="#" onClick="document.getElementById('logout').submit()">Logout</a></li>
+          <li class="nav-topic"><a href="{% url 'posts:food' %}">Food</a></li>
+          <li class="nav-topic"><a href="{% url 'posts:fun' %}">Fun</a></li>
+      		<li id="logout"><a href="#" onClick="document.getElementById('logout').submit()">Logout</a></li>
       		{% else %}
       		<li><a href="{% url 'accounts:signup' %}">Sign Up</a></li>
       		<li><a href="{% url 'accounts:login' %}">Login</a></li>		

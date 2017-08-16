@@ -12,15 +12,20 @@
 	{% load static %}
 	<div class="col-sm-6">
 		<a href="{% url 'posts:food' %}">
-			<img id="food" src="{% static 'posts/food.jpg' %}" alt="food" class="img-responsive" />	
+			<!-- <img id="food" src="{% static 'posts/food.jpg' %}" alt="food" class="img-responsive" />	 -->
+			<div class="image-holder" style="background-image: url('{% static 'posts/food.jpg' %}');">
+			    &nbsp;
+			</div>
 		</a>
-		<h4 class="topic">Food</h4>
 	</div>
 	<div class="col-sm-6">
-		<a class="btn btn-danger" href="{% url 'posts:fun' %}">
-			<img id="fun" src="{% static 'posts/food.jpg' %}" alt="food" class="img-responsive" />	
+		<a href="{% url 'posts:fun' %}">
+			<!-- <img id="fun" src="{% static 'posts/fun.jpg' %}" alt="food" class="img-responsive" />	 -->
+			<div class="image-holder" style="background-image: url('{% static 'posts/fun.jpg' %}');">
+			    &nbsp;
+			</div>
 		</a>
-		<h4 class="topic">Fun</h4>
+		<!-- <h4 class="topic">Fun</h4> -->
 	</div>
 </div>
 
